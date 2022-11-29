@@ -30,6 +30,7 @@
 		    <img src="img_avatar2.png" alt="Avatar woman">
 		    <h2>Jane Flex</h2>
 		    <p>Some text.</p>
+		    <p>End of code</p>
 		  </div>
 		</div>
 		  </div>
