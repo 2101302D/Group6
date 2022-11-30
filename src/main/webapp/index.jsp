@@ -8,32 +8,34 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<header style="background-color:white; height: 1vh;  padding: 30px;  background-size: cover;  ">
-		<nav style="font-size: 25px; text-align:left;">  
-			<ul>   
-				<a> Home </a>
-				<a>&nbsp</a>
-				<a> Mouses </a>  
-				<a>&nbsp</a>
-				<a> Keyboards </a>  
-				<a>&nbsp</a>
-				<a> About </a>   
-			</ul>  
+	<body style="background-color:#526777;">
+		<nav style="font-size: 25px; text-align:left; background-color: #CFCFCF; padding-left: 30px;">
+			<a> Home </a>
+			<a>&nbsp;</a>
+			<a> Mouses </a>
+			<a>&nbsp;</a>
+			<a> Keyboards </a>
+			<a>&nbsp;</a>
+			<a> About </a>
 		</nav>
-	</header>  
-	<body style="background-color:#33475b;">
-		<div class='container'>
-			<p style="font-size: 70px;"><b>Welcome</b></p>
+		
+		<div>
+			<p style="color:white; font-size: 60px; padding-top: 80px; padding-left: 40px; padding-bottom: 60px;">
+				<b>Welcome</b>
+			</p>
 		</div>
-			<div class="split left">
-	  <div class="centered">
-		    <img src="img_avatar2.png" alt="Avatar woman">
-		    <h2>Jane Flex</h2>
-		    <p>Some text.</p>
-		    <p>End of code</p>
-		  </div>
-		</div>
-		  </div>
-		</div>
+		
+		<table style="width:100%; height:500px; background-color: #495F70;">
+			<tr>
+				<td>
+					<p style="color:white; text-align:center;"> Gaming Keyboards</p>
+					<img class="center" style="width: 400px; height:300px" alt="imgKeyboards" src="https://m.media-amazon.com/images/I/81yOuAUQAiL.jpg">
+				</td>
+				<td>
+					<p style="color:white; text-align:center;"> Gaming Mouses </p>
+					<img class="center" style="width: 400px; height:300px; color:white" alt="imgMouses" src="https://cdn.thewirecutter.com/wp-content/media/2022/04/gaming-mouse-2048px-4690.jpg?auto=webp&quality=75&width=1024">
+				</td>
+			</tr>
+		</table>
 	</body>
-</html>
+	</html>
