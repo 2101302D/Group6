@@ -8,12 +8,13 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<nav style=" font-size: 20px; text-align:left; background-color: #cf2b2b; padding-left: 30px; font-family: Sitka Subheading">
+	
+	<nav class="topnav">
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="index.jsp"> Home </a>
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboard.jsp"> Keyboards </a>
 		<a>&nbsp;</a>
-		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;"> Mouses </a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="mouse.jsp"> Mouses </a>
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:20px;">  About </a>
 	</nav>
