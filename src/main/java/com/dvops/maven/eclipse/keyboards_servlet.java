@@ -72,10 +72,10 @@ public class keyboards_servlet extends HttpServlet {
 			return connection;
 	}
 	
-	private void listUsers(HttpServletRequest request, HttpServletResponse response)
+	private void listKeyboard(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
-			List <keyboard> users = new ArrayList <>();
+			List <keyboard> keyboard = new ArrayList <>();
 			try (Connection connection = getConnection();
 			// Step 5.1: Create a statement using connection object
 			PreparedStatement preparedStatement =
@@ -84,19 +84,23 @@ public class keyboards_servlet extends HttpServlet {
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
+			Number id = rs.getInt("id");
 			String name = rs.getString("name");
-			String password = rs.getString("password");
-			String email = rs.getString("email");
-			String language = rs.getString("language");
-			users.add(new User(name, password, email, language));
+			String switches = rs.getString("switch");
+			String size = rs.getString("size");
+			String backlight = rs.getString("backLight");
+			String passthrough = rs.getString("passThrough");
+			String keycaps = rs.getString("keycaps");
+			Number price = rs.getInt("price");
+			Number rating = rs.getInt("rating");
+			String image = rs.getString("image");
+			keyboard.add(new keyboard());
 			}
 			} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			}
-			// Step 5.4: Set the users list into the listUsers attribute to be pass to the
-			userManagement.jsp
-			request.setAttribute("listUsers", users);
-			request.getRequestDispatcher("/userManagement.jsp").forward(request, response);
+			request.setAttribute("listKeyboard", keyboard);
+			request.getRequestDispatcher("/keyboard.jsp").forward(request, response);
 			}
 
 
