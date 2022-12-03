@@ -23,7 +23,11 @@ import javax.servlet.RequestDispatcher;
  * Servlet implementation class keyboards_servlet
  */
 @WebServlet("/keyboards_servlet")
+
+
 public class keyboards_servlet extends HttpServlet {
+
+	
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -40,6 +44,14 @@ public class keyboards_servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String action = request.getServletPath();
+		try {
+			listKeyboard(request, response);
+		}
+		catch(SQLException ex) {
+			
+			throw new ServletException(ex);
+			
+		}
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -52,11 +64,11 @@ public class keyboards_servlet extends HttpServlet {
 		
 	}
 	
-	private String jdbcURL = "jdbc:mysql://localhost:3307/keyboards";
+	private static final String SELECT_ALL_KEYBOARD = "select * from keyboard";
+	private String jdbcURL = "jdbc:mysql://localhost:3307/keyboards/keyboard";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "tG078386";
 	
-	private static final String SELECT_ALL_KEYBOARD = "select * from keyboard";
 	
 	protected Connection getConnection() {
 		Connection connection = null;
@@ -72,10 +84,10 @@ public class keyboards_servlet extends HttpServlet {
 			return connection;
 	}
 	
-	private void listUsers(HttpServletRequest request, HttpServletResponse response)
+	private void listKeyboard(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
-			List <keyboard> users = new ArrayList <>();
+			List <keyboard> keyboard = new ArrayList <>();
 			try (Connection connection = getConnection();
 			// Step 5.1: Create a statement using connection object
 			PreparedStatement preparedStatement =
@@ -84,19 +96,23 @@ public class keyboards_servlet extends HttpServlet {
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
+			Number id = rs.getInt("id");
 			String name = rs.getString("name");
-			String password = rs.getString("password");
-			String email = rs.getString("email");
-			String language = rs.getString("language");
-			users.add(new User(name, password, email, language));
+			String switches = rs.getString("switch");
+			String size = rs.getString("size");
+			String backlight = rs.getString("backLight");
+			String passthrough = rs.getString("passThrough");
+			String keycaps = rs.getString("keycaps");
+			Number price = rs.getInt("price");
+			Number rating = rs.getInt("rating");
+			String image = rs.getString("image");
+			keyboard.add(new keyboard(id, name, switches, size, backlight, passthrough, keycaps, price, rating, image));
 			}
 			} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			}
-			// Step 5.4: Set the users list into the listUsers attribute to be pass to the
-			userManagement.jsp
-			request.setAttribute("listUsers", users);
-			request.getRequestDispatcher("/userManagement.jsp").forward(request, response);
+			request.setAttribute("listKeyboard", keyboard);
+			request.getRequestDispatcher("/keyboard.jsp").forward(request, response);
 			}
 
 

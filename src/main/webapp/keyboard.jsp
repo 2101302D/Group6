@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+crossorigin="anonymous">
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,14 +22,16 @@
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:20px;">  About </a>
 	</nav>
 		
-	<body style="background-color:white;" onload = "displayKeyboard()">
-	
-	<div class= "container">
-	<div class = "row">
-		<div id = "keyboardTable" class = "row"></div>
+	<body style="background-color:white;">
+		<div class="container"
+        style="height: 1250px; width: 2100px; background-color: white; justify-content: space-around;">
+        <div class="row" style="left: 0;">
+	<c:forEach var = "keyboard" items="${listKeyboard}">
+		<div class="card" style="position: relative; margin-top: 40px; border-color: black;">
+			<img src = <c:out value = "${keyboard.image}"/>>
+			<c:out value = "${keyboard.name}"/>
+		</div>
+	</c:forEach>
 	</div>
 	</div>
-	</body>
-	
-	<script src = "Group6/src/main/items.js"></script>
 </html>
