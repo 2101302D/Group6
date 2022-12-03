@@ -23,7 +23,11 @@ import javax.servlet.RequestDispatcher;
  * Servlet implementation class keyboards_servlet
  */
 @WebServlet("/keyboards_servlet")
+
+
 public class keyboards_servlet extends HttpServlet {
+
+	
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -40,6 +44,14 @@ public class keyboards_servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String action = request.getServletPath();
+		try {
+			listKeyboard(request, response);
+		}
+		catch(SQLException ex) {
+			
+			throw new ServletException(ex);
+			
+		}
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -52,11 +64,11 @@ public class keyboards_servlet extends HttpServlet {
 		
 	}
 	
-	private String jdbcURL = "jdbc:mysql://localhost:3307/keyboards";
+	private static final String SELECT_ALL_KEYBOARD = "select * from keyboard";
+	private String jdbcURL = "jdbc:mysql://localhost:3307/keyboards/keyboard";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "tG078386";
 	
-	private static final String SELECT_ALL_KEYBOARD = "select * from keyboard";
 	
 	protected Connection getConnection() {
 		Connection connection = null;
@@ -94,7 +106,7 @@ public class keyboards_servlet extends HttpServlet {
 			Number price = rs.getInt("price");
 			Number rating = rs.getInt("rating");
 			String image = rs.getString("image");
-			keyboard.add(new keyboard());
+			keyboard.add(new keyboard(id, name, switches, size, backlight, passthrough, keycaps, price, rating, image));
 			}
 			} catch (SQLException e) {
 			System.out.println(e.getMessage());

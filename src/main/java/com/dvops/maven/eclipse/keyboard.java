@@ -13,8 +13,11 @@ public class keyboard {
 	private String image;
 	
 
-	public void Keyboard(Number id,String name, String switches, String size, String backlight, String passthrough, String keycaps, Number price, Number rating, String image) 
-	{	this.id = id;
+	
+
+	public keyboard(Number id,String name, String switches, String size, String backlight, String passthrough, String keycaps, Number price, Number rating, String image) 
+	{	
+		this.id = id;
 		this.name = name;
 		this.switches = switches;
 		this.size = size;
@@ -31,6 +34,9 @@ public class keyboard {
 	
 	public String getSwitches() {return switches;}
 	
+	public Number getId() {
+		return id;
+	}
 	public String getBacklight() {return backlight;}
 	
 	public String getPassthrough() {return passthrough;}
