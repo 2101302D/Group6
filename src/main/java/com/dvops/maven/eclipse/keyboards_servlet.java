@@ -65,16 +65,17 @@ public class keyboards_servlet extends HttpServlet {
 	}
 	
 	private static final String SELECT_ALL_KEYBOARD = "select * from keyboard";
-	private String jdbcURL = "jdbc:mysql://localhost:3307/keyboards/keyboard";
+	/*private String jdbcURL = "jdbc:mysql://localhost:3307/keyboards";
 	private String jdbcUsername = "root";
-	private String jdbcPassword = "tG078386";
+	private String jdbcPassword = "tG078386";*/
 	
 	
 	protected Connection getConnection() {
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(jdbcURL,jdbcUsername,jdbcPassword);
+            Connection con = DriverManager.getConnection(
+            "jdbc:mysql://localhost:3307/keyboards", "root", "password");
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
