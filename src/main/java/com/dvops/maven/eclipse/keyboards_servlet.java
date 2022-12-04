@@ -74,8 +74,8 @@ public class keyboards_servlet extends HttpServlet {
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3307/keyboards", "root", "password");
+            connection = DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/keyboards", "root", "password");
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
