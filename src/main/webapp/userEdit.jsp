@@ -12,6 +12,16 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 crossorigin="anonymous">
 </head>
+  	<nav class="topnav">
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="index.jsp"> Home </a>
+		<a>&nbsp;</a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboard_servlet"> Keyboards </a>
+		<a>&nbsp;</a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="mouse.jsp"> Mouses </a>
+		<a>&nbsp;</a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:20px;">  About </a>
+		<a style="color: white; padding-right:50px; float:right;" href="userManagement.jsp">  User</a>
+	</nav>
 <body>
 <nav class="navbar navbar-expand-md navbar-light">
 <div>
