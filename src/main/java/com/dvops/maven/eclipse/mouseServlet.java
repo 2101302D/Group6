@@ -14,14 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloServlet
  */
-@WebServlet("/HelloServlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/mouseServlet")
+public class mouseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloServlet() {
+    public mouseServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,7 +48,7 @@ public class HelloServlet extends HttpServlet {
         String w = request.getParameter("Weight");
         String s = request.getParameter("Size");
         String P = request.getParameter("Price");
-        String r = request.getParameter("rating");
+        String r = request.getParameter("Rating");
         String I = request.getParameter("Image");
         String D = request.getParameter("Description");
         try {
@@ -56,7 +56,7 @@ public class HelloServlet extends HttpServlet {
             Connection con = DriverManager.getConnection(
             "jdbc:mysql://localhost:3306/userdetails", "root", "password");
 
-        PreparedStatement ps = con.prepareStatement("insert into MOUSE values(?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO mouse VALUES(?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1, n);
         ps.setString(2, c);
         ps.setString(3, b);
