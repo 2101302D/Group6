@@ -75,8 +75,8 @@ public class keyboards_servlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/keyboards", "root", "password");
-		}
+            "jdbc:mysql://127.0.0.1:3306/?user=root", "root", "tG078386");
+		}	
 		catch (SQLException e) {
 			e.printStackTrace();
 			} catch (ClassNotFoundException e) {
@@ -88,21 +88,22 @@ public class keyboards_servlet extends HttpServlet {
 	private void listKeyboard(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
+			String id = "0";
 			List <keyboard> keyboard = new ArrayList <>();
 			try (Connection connection = getConnection();
 			// Step 5.1: Create a statement using connection object
 			PreparedStatement preparedStatement =
-			connection.prepareStatement(SELECT_ALL_KEYBOARD);) {
+			connection.prepareStatement("SELECT * FROM keyboards.keyboard");) {
 			// Step 5.2: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
-			Number id = rs.getInt("id");
+			id = rs.getString("id");
 			String name = rs.getString("name");
 			String switches = rs.getString("switch");
 			String size = rs.getString("size");
-			String backlight = rs.getString("backLight");
-			String passthrough = rs.getString("passThrough");
+			String backlight = rs.getString("backlight");
+			String passthrough = rs.getString("passthrough");
 			String keycaps = rs.getString("keycaps");
 			Number price = rs.getInt("price");
 			Number rating = rs.getInt("rating");
