@@ -8,32 +8,37 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body style="background-color:#526777;">
-		<nav style="font-size: 25px; text-align:left; background-color: #CFCFCF; padding-left: 30px;">
-			<a> Home </a>
-			<a>&nbsp;</a>
-			<a> Mouses </a>
-			<a>&nbsp;</a>
-			<a> Keyboards </a>
-			<a>&nbsp;</a>
-			<a> About </a>
-		</nav>
-		
-		<div>
-			<p style="color:white; font-size: 60px; padding-top: 80px; padding-left: 40px; padding-bottom: 60px;">
+	
+	<body style="background-color:white;"> 
+  <nav class="topnav">
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="index.jsp"> Home </a>
+		<a>&nbsp;</a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboards_servlet"> Keyboards </a>
+		<a>&nbsp;</a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="mouse.jsp"> Mouses </a>
+		<a>&nbsp;</a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:20px;">  About </a>
+		<a style="color: white; padding-right:50px; float:right;" href="userManagement.jsp">  User</a>
+	</nav>
+		<div style="background-color:#dbdbdb;">
+			<p style="color:#636363; font-size: 60px; padding-top: 80px; padding-left: 40px; padding-bottom: 60px;">
 				<b>Welcome</b>
 			</p>
 		</div>
 		
-		<table style="width:100%; height:500px; background-color: #495F70;">
+		<table style="width:100%; height:500px;">
 			<tr>
 				<td>
-					<p style="color:white; text-align:center;"> Gaming Keyboards</p>
-					<img class="center" style="width: 400px; height:300px" alt="imgKeyboards" src="https://m.media-amazon.com/images/I/81yOuAUQAiL.jpg">
+					<a href = "keyboards_servlet" style="color:#b03030;">
+					  <p style="text-align:center; font-size: 30px;" ><b>Gaming Keyboards</b></p>
+					  <img class="center" style="width: 400px; height:300px" alt="imgKeyboards" src="https://m.media-amazon.com/images/I/81yOuAUQAiL.jpg">
+					</a>
 				</td>
 				<td>
-					<p style="color:white; text-align:center;"> Gaming Mouses </p>
-					<img class="center" style="width: 400px; height:300px; color:white" alt="imgMouses" src="https://cdn.thewirecutter.com/wp-content/media/2022/04/gaming-mouse-2048px-4690.jpg?auto=webp&quality=75&width=1024">
+					<a href="mouse.jsp" style="color:#b03030;">
+						<p style="color:#b03030; text-align:center; font-size: 30px;"><b>Gaming Mouses</b></p>
+						<img class="center" style="width: 400px; height:300px; color:white" alt="imgMouses" src="https://cdn.thewirecutter.com/wp-content/media/2022/04/gaming-mouse-2048px-4690.jpg?auto=webp&quality=75&width=1024">
+					</a>
 				</td>
 			</tr>
 		</table>
