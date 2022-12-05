@@ -13,6 +13,5 @@
 	Email: <input type="text" name="email">
 	<input type="submit" value="Call Servlet" />
 </form>
-
 </body>
 </html>

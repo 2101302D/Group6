@@ -76,6 +76,7 @@ public class UserServlet extends HttpServlet {
 	
 	private void updateUser(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
+				String oriName = request.getParameter("oriName");
 				String name = request.getParameter("name");
 				String password = request.getParameter("password");
 				String email = request.getParameter("email");
@@ -84,9 +85,10 @@ public class UserServlet extends HttpServlet {
 					statement.setString(1, name);
 					statement.setString(2, password);
 					statement.setString(3, email);
+					statement.setString(4, oriName);
 					int i = statement.executeUpdate();
 			}
-				response.sendRedirect("http://localhost:8090/HelloWorldJavaEE/UserServlet/dashboard");
+				response.sendRedirect("http://localhost:8080/Group6/UserServlet/dashboard");
 			}
 
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response)
@@ -97,7 +99,7 @@ public class UserServlet extends HttpServlet {
 					statement.setString(1, name);
 					int i = statement.executeUpdate();
 			}
-				response.sendRedirect("http://localhost:8090/HelloWorldJavaEE/UserServlet/dashboard");
+				response.sendRedirect("http://localhost:8080/Group6/UserServlet/dashboard");
 			}
 
 	private static final long serialVersionUID = 1L;
