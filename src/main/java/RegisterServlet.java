@@ -1,4 +1,4 @@
-
+	
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -44,7 +44,7 @@ public class RegisterServlet extends HttpServlet {
 		String n = request.getParameter("userName");
 		String p = request.getParameter("password");
 		String e = request.getParameter("email");
-		try {
+		try {	
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
 			"jdbc:mysql://localhost:3306/userdetails", "root", "password");
@@ -55,9 +55,10 @@ public class RegisterServlet extends HttpServlet {
 		ps.setString(3, e);
 		int i = ps.executeUpdate();
 		if (i > 0){
-			PrintWriter writer = response.getWriter();
+			/*PrintWriter writer = response.getWriter();
 			writer.println("<h1>" + "You have successfully registered an account!" + "</h1>");
-			writer.close();
+			writer.close();*/
+			response.sendRedirect("http://localhost:8080/Group6/UserServlet/dashboard");
 			}
 		}
 		catch (Exception exception) {
