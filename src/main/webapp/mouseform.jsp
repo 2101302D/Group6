@@ -1,9 +1,9 @@
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Product Form</title>
 </head>
 <body>
-<h1>Hello JSP and Servlet!</h1>
-<form action="HelloServlet" method="post">
+<h1>Gaming Mouse Product Form</h1>
+<form action="mouseServlet" method="post">
 	Name: <input type="text" name="Name">
 	Connection: <input type="text" name="Connection">
 	Buttons: <input type="text" name="Buttons">
@@ -14,7 +14,7 @@
 	Rating: <input type="text" name="Rating">
 	Image: <input type="url" name="Image">
 	Description: <input type="text" name="Description">
-	<input type="submit" value="Call Servlet" />
+	<input type="submit" value="Submit" />
 </form>
 </body>
 </html>
