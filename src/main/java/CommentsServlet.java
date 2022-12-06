@@ -49,7 +49,7 @@ public class CommentsServlet extends HttpServlet {
 			Connection con = DriverManager.getConnection(
 			"jdbc:mysql://localhost:3306/userdetails", "root", "password");
 			
-		PreparedStatement ps = con.prepareStatement("insert into USER values(?,?,?)");
+		PreparedStatement ps = con.prepareStatement("insert into name values(?,?,?)");
 		ps.setString(1, n);
 		ps.setString(2, e);
 		ps.setString(3, c);
@@ -59,13 +59,13 @@ public class CommentsServlet extends HttpServlet {
 			writer.println("<h1>" + "You have submitted the comment!" + "</h1>");
 			writer.close();
 		}
-	}
-	catch (Exception exception) {
-		System.out.println(exception);
-		PrintWriter out = null;
-		out.close();
 		}
-		doGet(request, response);
-}
+		catch (Exception exception) {
+			System.out.println(exception);
+			out.close();
+			}
+			doGet(request, response);
+	}
 
 }
+
