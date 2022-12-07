@@ -9,18 +9,17 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	
-	<nav class="topnav">
+	<body style="background-color:white;"> 
+  <nav class="topnav">
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="index.jsp"> Home </a>
 		<a>&nbsp;</a>
-		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboard.jsp"> Keyboards </a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboards_servlet"> Keyboards </a>
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="mouse.jsp"> Mouses </a>
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:20px;">  About </a>
+		<a style="color: white; padding-right:50px; float:right;" href="userManagement.jsp">  User</a>
 	</nav>
-	
-	<body style="background-color:white;">
-		
 		<div style="background-color:#dbdbdb;">
 			<p style="color:#636363; font-size: 60px; padding-top: 80px; padding-left: 40px; padding-bottom: 60px;">
 				<b>Welcome</b>
@@ -30,9 +29,9 @@
 		<table style="width:100%; height:500px;">
 			<tr>
 				<td>
-					<a href="keyboard.jsp" style="color:#b03030;">
-						<p style="text-align:center; font-size: 30px;" ><b>Gaming Keyboards</b></p>
-						<img class="center" style="width: 400px; height:300px" alt="imgKeyboards" src="https://m.media-amazon.com/images/I/81yOuAUQAiL.jpg">
+					<a href = "keyboards_servlet" style="color:#b03030;">
+					  <p style="text-align:center; font-size: 30px;" ><b>Gaming Keyboards</b></p>
+					  <img class="center" style="width: 400px; height:300px" alt="imgKeyboards" src="https://m.media-amazon.com/images/I/81yOuAUQAiL.jpg">
 					</a>
 				</td>
 				<td>
