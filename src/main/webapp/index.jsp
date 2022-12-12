@@ -29,7 +29,7 @@
 		<table style="width:100%; height:500px;">
 			<tr>
 				<td>
-					<a href = "keyboards_servlet" style="color:#b03030;">
+					<a href = "keyboard.jsp" style="color:#b03030;">
 					  <p style="text-align:center; font-size: 30px;" ><b>Gaming Keyboards</b></p>
 					  <img class="center" style="width: 400px; height:300px" alt="imgKeyboards" src="https://m.media-amazon.com/images/I/81yOuAUQAiL.jpg">
 					</a>
