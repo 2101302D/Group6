@@ -20,14 +20,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
-	private String jdbcURL = "jdbc:mysql://localhost:3306/userdetails";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/user=?root";
 	private String jdbcUsername = "root";
-	private String jdbcPassword = "password";
-	private static final String INSERT_USERS_SQL = "INSERT INTO UserDetails" + " (name,password, email) VALUES " +" (?, ?);";
-	private static final String SELECT_USER_BY_ID = "select name,password,email fromUserDetails where name =?";
-	private static final String SELECT_ALL_USERS = "select * from UserDetails ";
-	private static final String DELETE_USERS_SQL = "delete from UserDetails where name = ?;";
-	private static final String UPDATE_USERS_SQL = "update UserDetails set name = ?,password= ?,email =? where name = ?;";
+	private String jdbcPassword = "tG078386";
+	private static final String INSERT_USERS_SQL = "INSERT INTO devops_backend.user" + " (name,password, email) VALUES " +" (?, ?);";
+	private static final String SELECT_USER_BY_ID = "select name,password,email from devops_backend.user where name =?";
+	private static final String SELECT_ALL_USERS = "select * from devops_backend.user ";
+	private static final String DELETE_USERS_SQL = "delete from devops_backend.user where name = ?;";
+	private static final String UPDATE_USERS_SQL = "update devops_backend.user set name = ?,password= ?,email =? where name = ?;";
 	
 	private void listUsers(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
@@ -76,7 +76,6 @@ public class UserServlet extends HttpServlet {
 	
 	private void updateUser(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
-				String oriName = request.getParameter("oriName");
 				String name = request.getParameter("name");
 				String password = request.getParameter("password");
 				String email = request.getParameter("email");
@@ -85,7 +84,6 @@ public class UserServlet extends HttpServlet {
 					statement.setString(1, name);
 					statement.setString(2, password);
 					statement.setString(3, email);
-					statement.setString(5, oriName);
 					int i = statement.executeUpdate();
 			}
 				response.sendRedirect("http://localhost:8090/HelloWorldJavaEE/UserServlet/dashboard");
