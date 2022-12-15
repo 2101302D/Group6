@@ -70,7 +70,7 @@ public class mouseServlet extends HttpServlet {
         int i = ps.executeUpdate();
         if (i > 0){
             PrintWriter writer = response.getWriter();
-            writer.println("<h1>" + "You have successfully registered an account!" + "</h1>");
+            writer.println("<h1>" + "You have successfully published" + "</h1>");
             writer.close();
             }
         }
