@@ -62,7 +62,6 @@ public class CommentsServlet extends HttpServlet {
 		}
 		catch (Exception exception) {
 			System.out.println(exception);
-			out.close();
 			}
 			doGet(request, response);
 	}
