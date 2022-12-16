@@ -1,2 +1,2 @@
 # Group6
-Gaming Keyboard and Mouse Review Web Application
+Hotfix for the backend of the code
