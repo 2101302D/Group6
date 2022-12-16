@@ -8,19 +8,28 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<nav class="topnav">
+  	<nav class="topnav">
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="index.jsp"> Home </a>
 		<a>&nbsp;</a>
-		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboard.jsp"> Keyboards </a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboard_servlet"> Keyboards </a>
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="mouse.jsp"> Mouses </a>
 		<a>&nbsp;</a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="comment.jsp">Feedback </a>
+		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:20px;">  About </a>
+		<a style="color: white; padding-right:50px; float:right;" href="userManagement.jsp">  User</a>
 	</nav>
 		
 	<body style="background-color:white;">
+	
+	<div style="padding-top:40px; padding-left:400px; padding-right:400px;">
+		<form action="mouseform.jsp">
+    		<input type="submit" value="Add Product"/>
+		</form>
+	</div>
 		
-		<div style="padding-top:100px; padding-left:400px; padding-right:400px;">
+		<div style="padding-top:40px; padding-left:400px; padding-right:400px;">
 			<div class="card" style="background-color:#dbdbdb;">
 				<div class="card-body">
 					<h4>Razer DeathAdder V2</h4>

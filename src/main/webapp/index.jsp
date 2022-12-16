@@ -13,11 +13,12 @@
   <nav class="topnav">
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="index.jsp"> Home </a>
 		<a>&nbsp;</a>
-		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboard_servlet"> Keyboards </a>
+		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboards_servlet"> Keyboards </a>
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="mouse.jsp"> Mouses </a>
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:20px;">  About </a>
+		<a style="color: white; padding-right:50px; float:right;" href="userManagement.jsp">  User</a>
 	</nav>
 		<div style="background-color:#dbdbdb;">
 			<p style="color:#636363; font-size: 60px; padding-top: 80px; padding-left: 40px; padding-bottom: 60px;">
