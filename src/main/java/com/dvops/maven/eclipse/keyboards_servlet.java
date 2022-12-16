@@ -75,7 +75,9 @@ public class keyboards_servlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(
-            "jdbc:mysql://127.0.0.1:3306/?user=root", "root", "password");
+
+        "jdbc:mysql://localhost:3306/keyboards", "root", "password");
+
 		}	
 		catch (SQLException e) {
 			e.printStackTrace();
@@ -93,7 +95,7 @@ public class keyboards_servlet extends HttpServlet {
 			try (Connection connection = getConnection();
 			// Step 5.1: Create a statement using connection object
 			PreparedStatement preparedStatement =
-			connection.prepareStatement("SELECT * FROM keyboards.keyboard");) {
+			connection.prepareStatement(SELECT_ALL_KEYBOARD);) {
 			// Step 5.2: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
