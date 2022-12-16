@@ -13,7 +13,9 @@
   <nav class="topnav">
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="index.jsp"> Home </a>
 		<a>&nbsp;</a>
+
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="keyboards_servlet"> Keyboards </a>
+
 		<a>&nbsp;</a>
 		<a style=" color: white; border-style: none groove none none; padding-left:10px; padding-right:10px;" href="mouse.jsp"> Mouses </a>
 		<a>&nbsp;</a>

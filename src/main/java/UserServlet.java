@@ -20,14 +20,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
-	private String jdbcURL = "jdbc:mysql://localhost:3306/userdetails";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/user=?root";
 	private String jdbcUsername = "root";
-	private String jdbcPassword = "password";
-	private static final String INSERT_USERS_SQL = "INSERT INTO User" + " (name,password, email) VALUES " +" (?, ?);";
-	private static final String SELECT_USER_BY_ID = "select name,password,email from User where name =?";
-	private static final String SELECT_ALL_USERS = "select * from User ";
-	private static final String DELETE_USERS_SQL = "delete from User where name = ?;";
-	private static final String UPDATE_USERS_SQL = "update User set name = ?,password= ?,email =? where name = ?;";
+	private String jdbcPassword = "tG078386";
+	private static final String INSERT_USERS_SQL = "INSERT INTO devops_backend.user" + " (name,password, email) VALUES " +" (?, ?);";
+	private static final String SELECT_USER_BY_ID = "select name,password,email from devops_backend.user where name =?";
+	private static final String SELECT_ALL_USERS = "select * from devops_backend.user ";
+	private static final String DELETE_USERS_SQL = "delete from devops_backend.user where name = ?;";
+	private static final String UPDATE_USERS_SQL = "update devops_backend.user set name = ?,password= ?,email =? where name = ?;";
 	
 	private void listUsers(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
