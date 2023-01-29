@@ -90,7 +90,6 @@ public class keyboards_servlet extends HttpServlet {
 	private void listKeyboard(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
-			String id = "0";
 			List <keyboard> keyboard = new ArrayList <>();
 			try (Connection connection = getConnection();
 			// Step 5.1: Create a statement using connection object
@@ -100,7 +99,7 @@ public class keyboards_servlet extends HttpServlet {
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 5.3: Process the ResultSet object.
 			while (rs.next()) {
-			id = rs.getString("id");
+			String id = rs.getString("id");
 			String name = rs.getString("name");
 			String switches = rs.getString("switch");
 			String size = rs.getString("size");
