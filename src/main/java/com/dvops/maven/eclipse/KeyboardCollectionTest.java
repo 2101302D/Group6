@@ -6,12 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class KeyboardTest {
-	private KeyboardTest kt;
-	private keyboard k1;
-	private keyboard k2;
-	private final int KEYBOARD_COLLECTION_SIZE = 2;
-	
+class KeyboardCollectionTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -22,49 +17,33 @@ class KeyboardTest {
 	}
 
 	@Test
-	void testGetName() {
+	void testGetKeyboard() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	void testGetSwitches() {
+	void testAddKeyboard() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	void testGetId() {
+	void testSortKeyboardsByTitle() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	void testGetBacklight() {
+	void testSortSongsBySongLength() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	void testGetPassthrough() {
+	void testFindKeyboardbyId() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	void testGetKeycaps() {
+	void testFindKeyboardbyName() {
 		fail("Not yet implemented");
 	}
-
-	@Test
-	void testGetPrice() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetRating() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetImage() {
-		fail("Not yet implemented");
-	}
-	
 
 }

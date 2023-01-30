@@ -106,7 +106,7 @@ public class keyboards_servlet extends HttpServlet {
 			String backlight = rs.getString("backlight");
 			String passthrough = rs.getString("passthrough");
 			String keycaps = rs.getString("keycaps");
-			Number price = rs.getInt("price");
+			Double price = rs.getDouble("price");
 			Number rating = rs.getInt("rating");
 			String image = rs.getString("image");
 			keyboard.add(new keyboard(id, name, switches, size, backlight, passthrough, keycaps, price, rating, image));
