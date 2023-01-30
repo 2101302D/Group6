@@ -1,7 +1,6 @@
 package com.dvops.maven.eclipse;
 
 public class Mouse {
-	private String id;
 	private String name;
 	private String connection;
 	private String buttons;
@@ -16,9 +15,8 @@ public class Mouse {
 
 	
 
-	public Mouse(String id,String name, String connection, String buttons, String DPI, String weight, String size, String price, String rating, String image, String description) 
+	public Mouse(String name, String connection, String buttons, String DPI, String weight, String size, String price, String rating, String image, String description) 
 	{	
-		this.id = id;
 		this.name = name;
 		this.connection = connection;
 		this.buttons = buttons;
@@ -31,7 +29,7 @@ public class Mouse {
 		this.description = description;
 		
 	}
-	public String getId() {return id;}
+
 	
 	public String getName() {return name;}
 	
