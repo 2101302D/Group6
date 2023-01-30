@@ -26,12 +26,12 @@ public class KeyboardCollection{
 	    	}
 	    }
 	    
-	    public ArrayList<keyboard> sortKeyboardsByTitle() {         
+	    public ArrayList<keyboard> sortKeyboardsByName() {         
 	        Collections.sort(keyboards, keyboard.nameComparator);         
 	        return keyboards;     
 	    } 
 	    
-	    public ArrayList<keyboard> sortSongsBySongLength() {         
+	    public ArrayList<keyboard> sortKeyboardsByPrice() {         
 	        Collections.sort(keyboards, keyboard.priceComparator);         
 	        return keyboards;       
 	    } 
@@ -49,4 +49,5 @@ public class KeyboardCollection{
 	       }
 	    	return null;
 	    }
+	    
 }
