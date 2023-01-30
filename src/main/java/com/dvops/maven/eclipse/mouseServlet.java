@@ -56,7 +56,7 @@ public class mouseServlet extends HttpServlet {
             Connection con = DriverManager.getConnection(
             "jdbc:mysql://localhost:3306/userdetails", "root", "password");
 
-        PreparedStatement ps = con.prepareStatement("INSERT INTO mouse VALUES(?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO devops_backend.mouse VALUES(?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1, n);
         ps.setString(2, c);
         ps.setString(3, b);
