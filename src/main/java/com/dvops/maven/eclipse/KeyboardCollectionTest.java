@@ -1,5 +1,10 @@
 package com.dvops.maven.eclipse;
 
+import org.testng.annotations.AfterMethod;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -7,7 +12,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 class KeyboardCollectionTest {
 	
@@ -19,6 +23,7 @@ class KeyboardCollectionTest {
 	private final int KEYBOARD_COLLECTION_SIZE = 4;
 	private final int KEYBOARD_COLLECTION_CAPACITY = 20;
 
+	@BeforeMethod
 	@BeforeEach
 	void setUp() throws Exception {
 		kc = new KeyboardCollection();
@@ -32,6 +37,7 @@ class KeyboardCollectionTest {
 		kc.addKeyboard(k4);
 	}
 
+	@AfterMethod
 	@AfterEach
 	void tearDown() throws Exception {
 	}
@@ -39,17 +45,17 @@ class KeyboardCollectionTest {
 	@Test
 	void testGetKeyboard() {
 		int KEYBOARD_COLLECTION_SIZE_TEST = 4;
-		assertEquals(kc.getKeyboard().size(), KEYBOARD_COLLECTION_SIZE_TEST);
+		AssertJUnit.assertEquals(kc.getKeyboard().size(), KEYBOARD_COLLECTION_SIZE_TEST);
 	}
 
 	@Test
 	void testAddKeyboard() {
 		List<keyboard> testKc = kc.getKeyboard();
 		
-		assertEquals(testKc.size(), KEYBOARD_COLLECTION_SIZE);
+		AssertJUnit.assertEquals(testKc.size(), KEYBOARD_COLLECTION_SIZE);
 		
 		kc.addKeyboard(k1);
-		assertEquals(kc.getKeyboard().size(), KEYBOARD_COLLECTION_SIZE + 1);
+		AssertJUnit.assertEquals(kc.getKeyboard().size(), KEYBOARD_COLLECTION_SIZE + 1);
 	}
 	
 
@@ -61,8 +67,8 @@ class KeyboardCollectionTest {
 		
 		ArrayList<keyboard> sortedKeyboards = kc.sortKeyboardsByName();
 		
-		assertEquals("giant keyboard", sortedKeyboards.get(3).getName());
-		assertEquals("Keychron Q1", sortedKeyboards.get(1).getName());
+		AssertJUnit.assertEquals("giant keyboard", sortedKeyboards.get(3).getName());
+		AssertJUnit.assertEquals("Keychron Q1", sortedKeyboards.get(1).getName());
 		
 	}
 
@@ -74,8 +80,8 @@ class KeyboardCollectionTest {
 		
 		ArrayList<keyboard> sortedKeyboards = kc.sortKeyboardsByPrice();
 		
-		assertEquals(130.00, sortedKeyboards.get(1).getPrice());
-		assertEquals(154.00, sortedKeyboards.get(0).getPrice());
+		AssertJUnit.assertEquals(130.00, sortedKeyboards.get(1).getPrice());
+		AssertJUnit.assertEquals(154.00, sortedKeyboards.get(0).getPrice());
 	}
 
 	@Test
@@ -86,7 +92,7 @@ class KeyboardCollectionTest {
 
 	        keyboard k = kc.findKeyboardbyId("0");
 
-	        assertEquals("0", k.getId());
+	        AssertJUnit.assertEquals("0", k.getId());
 	}
 
 	@Test
@@ -96,7 +102,7 @@ class KeyboardCollectionTest {
         keyboards.add(k2);
 
         keyboard k = kc.findKeyboardbyName("Keychron Q1");
-        assertEquals("Keychron Q1", k.getName());
+        AssertJUnit.assertEquals("Keychron Q1", k.getName());
 	}
 	
 	@Test
@@ -106,7 +112,7 @@ class KeyboardCollectionTest {
 	        keyboards.add(k2);
 
 	        keyboard k = kc.findKeyboardbyName("Keychron Q2");
-	        assertNull(k);
+	        AssertJUnit.assertNull(k);
 	}
 	
 	@Test
@@ -117,35 +123,35 @@ class KeyboardCollectionTest {
 
 	        keyboard k = kc.findKeyboardbyId("5");
 
-	        assertNull(k);
+	        AssertJUnit.assertNull(k);
 	}
 	
 	@Test
 	void keyboardAddEqualTest() {
 		boolean IS_EQUAL = true;
 		boolean k = kc.equals(kc);
-		assertEquals(k, IS_EQUAL);
+		AssertJUnit.assertEquals(k, IS_EQUAL);
 	}
 	
 	@Test
 	void testEquals_True() {
-		assertTrue(k1.equals(k1));
+		AssertJUnit.assertTrue(k1.equals(k1));
 	}
 	
 	@Test
 	void testEquals_False() {
-		assertFalse(k1.equals(k2));
+		AssertJUnit.assertFalse(k1.equals(k2));
 	}
 	
 	@Test
 	void testEquals_NotKeyboard() {
 		String k5 = "a";
-		assertFalse(k1.equals(k5));
+		AssertJUnit.assertFalse(k1.equals(k5));
 	}
 	
 	@Test
 	void testHash_True() {
-		assertEquals(k1.hashCode(), k1.hashCode());
+		AssertJUnit.assertEquals(k1.hashCode(), k1.hashCode());
 	}
 	
 	@Test
@@ -157,62 +163,62 @@ class KeyboardCollectionTest {
 	void testSetName() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setName("Keychron Q2");
-		assertEquals("Keychron Q2", k.getName());
+		AssertJUnit.assertEquals("Keychron Q2", k.getName());
 	}
 	
 	@Test
 	void testSetSwitch() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setSwitches("red");
-		assertEquals("red", k.getSwitches());
+		AssertJUnit.assertEquals("red", k.getSwitches());
 	}
 	
 	@Test
 	void testSetId() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setId("0");
-		assertEquals("0",k.getId());
+		AssertJUnit.assertEquals("0",k.getId());
 	}
 	
 	@Test
 	void testSetBacklight() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setBacklight("Bright");
-		assertEquals("Bright", k.getBacklight());
+		AssertJUnit.assertEquals("Bright", k.getBacklight());
 	}
 	
 	@Test
 	void testSetPassthrough() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setPassthrough("Transparent");
-		assertEquals("Transparent", k.getPassthrough());
+		AssertJUnit.assertEquals("Transparent", k.getPassthrough());
 	}
 	
 	@Test
 	void testSetKeycaps() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setKeycaps("black");
-		assertEquals("black", k.getKeycaps());
+		AssertJUnit.assertEquals("black", k.getKeycaps());
 	}
 	
 	@Test
 	void testSetPrice() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setPrice(120.00);
-		assertEquals(120.00, k.getPrice());
+		AssertJUnit.assertEquals(120.00, k.getPrice());
 	}
 	
 	@Test
 	void testSetRating() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, null, null);
 		k.setRating(3);
-		assertEquals(3, k.getRating());
+		AssertJUnit.assertEquals(3, k.getRating());
 	}
 	
 	@Test
 	void testSetImage() {
 		keyboard k = new keyboard(null, null, null, null, null, null, null, null, KEYBOARD_COLLECTION_CAPACITY, null);
 		k.setImage("https://www.cnet.com/a/img/resize/19450244d75b42469f56dfbfdb0b7b39ddad50b6/hub/2021/08/20/453e37bf-61cb-4e16-ad90-fd822bdc390a/keychron-k3-mechanical-keyboard.jpg?auto=webp&fit=crop&height=1200&width=1200");
-		assertEquals("https://www.cnet.com/a/img/resize/19450244d75b42469f56dfbfdb0b7b39ddad50b6/hub/2021/08/20/453e37bf-61cb-4e16-ad90-fd822bdc390a/keychron-k3-mechanical-keyboard.jpg?auto=webp&fit=crop&height=1200&width=1200", k.getImage());
+		AssertJUnit.assertEquals("https://www.cnet.com/a/img/resize/19450244d75b42469f56dfbfdb0b7b39ddad50b6/hub/2021/08/20/453e37bf-61cb-4e16-ad90-fd822bdc390a/keychron-k3-mechanical-keyboard.jpg?auto=webp&fit=crop&height=1200&width=1200", k.getImage());
 	}
 }
