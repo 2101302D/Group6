@@ -4,8 +4,7 @@ import java.util.*;
 
 public class mouseCollection {
 
-    private ArrayList<mouseServlet> mouses = new ArrayList<>();
-    private int capacity;
+    private ArrayList<Mouse> mouses = new ArrayList<>();
 
     public mouseCollection() {
     	/*songs.add(new Song("0001","good 4 u","Olivia Rodrigo",3.59));
@@ -14,7 +13,18 @@ public class mouseCollection {
     	songs.add(new Song("0004","bad guy","Billie Eilish",3.14));*/
     }
 
-    public List<mouseServlet> getMouses() {
+    public List<Mouse> getMouses() {
         return mouses;
+    }
+    
+    public void postMouses(Mouse mouseData) {
+    	mouses.add(mouseData);
+    }
+    
+    public Mouse getByName(String name){
+    	for (Mouse m : mouses) { 		      
+            if(m.getName().equals(name)) return m;
+       }
+    	return null;
     }
 }

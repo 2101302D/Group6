@@ -2,6 +2,8 @@ package com.dvops.maven.eclipse;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -63,15 +65,15 @@ class MouseCollectionTest {
 				"https://cdn.mos.cms.futurecdn.net/FsYiy2ZBVwhAPeUxJj63NE-970-80.jpg.webp",
 				" "
 				);
-		sc.addSong(s1);
-		sc.addSong(s2);
-		sc.addSong(s3);
-		
+		sc.postMouses(s1);
+		sc.postMouses(s2);
+		sc.postMouses(s3);
 	}
 
 	@Test
-	void testGetMouses() {
-		fail("Not yet implemented");
+	void testAddMouses() {
+		List<Mouse> testSc = sc.getMouses();
+		sc.postMouses(s1);
 	}
 
 }
