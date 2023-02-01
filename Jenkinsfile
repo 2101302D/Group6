@@ -5,6 +5,11 @@ pipeline {
     }
 
     stages {
+    	stage('Compile Library'){
+    		steps{
+    			sh "cd */junit && make"
+    		}
+    	}
         stage('Build') {
             steps {
                 bat label: 'Building Project', script: '''

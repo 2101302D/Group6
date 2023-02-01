@@ -1,19 +1,16 @@
 package com.dvops.maven.eclipse;
 
-import org.testng.annotations.AfterMethod;
-
-
-
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.AssertJUnit;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
+
+
 import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 class KeyboardCollectionTest {
 	
@@ -158,7 +155,7 @@ class KeyboardCollectionTest {
 	
 	@Test
 	void testHash_False() {
-		assertNotEquals(k1.hashCode(), k2.hashCode());
+		AssertJUnit.assertNotSame(k1.hashCode(), k2.hashCode());
 	}
 	
 	@Test
