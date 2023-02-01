@@ -10,7 +10,7 @@ pipeline {
                 bat label: 'Building Project', script: '''
                     @echo 
                     echo 'Building...'
-                    mvn package -Dmaven.test.skip=true
+                    cd Group6 && mvn package -Dmaven.test.skip=true
                 '''
             }
             post{
