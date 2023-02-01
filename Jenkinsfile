@@ -47,7 +47,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                deploy adapters: [tomcat9(credentialsId: '96566973-c3be-4e36-92af-9173d0a2496a', path: '', url: 'http://localhost:8090')], contextPath: "Group6", onFailure: false, war: 'target/*.war'            
+                deploy adapters: [tomcat9(credentialsId: '80d02ef4-2268-49df-9f86-c7fe9b2ee095', path: '', url: 'http://localhost:8090/')], contextPath: 'Group6', onFailure: false, war: 'target/*.war'           
                 }
             post{
                 always{
