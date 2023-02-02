@@ -75,5 +75,9 @@ class MouseCollectionTest {
 		List<Mouse> testSc = sc.getMouses();
 		sc.postMouses(s1);
 	}
+	
+	void testGetMouses() {
+		sc.getMouses();
+	}
 
 }
