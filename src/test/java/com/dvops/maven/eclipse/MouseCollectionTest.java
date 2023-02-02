@@ -77,7 +77,6 @@ class MouseCollectionTest {
 	}
 	
 	void testGetMouses() {
-		sc.getMouses();
 	}
 
 }
