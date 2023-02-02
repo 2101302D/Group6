@@ -107,16 +107,17 @@ public class UserServlet extends HttpServlet {
 	protected Connection getConnection() {
 		Connection connection = null;
 		try {
-		Class.forName("com.mysql.jdbc.Driver");
-		connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-		} 
+			Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection(
+            "jdbc:mysql://127.0.0.1:3306/?user=root", "root", "123");
+            
+		}	
 		catch (SQLException e) {
-		e.printStackTrace();
-		} 
-		catch (ClassNotFoundException e) {
-		e.printStackTrace();
-		}
-		return connection;
+			e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			}
+			return connection;
 	}
 
     /**
