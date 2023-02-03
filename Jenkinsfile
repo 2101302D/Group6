@@ -43,6 +43,23 @@ pipeline {
                 }
             }
         }
+        stage('Analyse'){
+            steps{
+                echo: 'Analyzing...'
+                bat 'mvn sonar:sonar -Dsonar.projectKey=Group6 -Dsonar.host.url=http://localhost:9000 -Dsonar.login=1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b'
+            }
+            post{
+                always{
+                    echo 'Analysis Completed'
+                }
+                success{
+                    echo 'Analysis Success'
+                }
+                failure{
+                    echo 'Analysis Failed'
+                }
+            }
+        }
 
         stage('Deploy') {
             steps {

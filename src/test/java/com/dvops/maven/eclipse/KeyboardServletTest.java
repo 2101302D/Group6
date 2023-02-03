@@ -1,5 +1,8 @@
 package com.dvops.maven.eclipse;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
@@ -15,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.mockito.*;
 
 class KeyboardServletTest {
@@ -25,11 +27,13 @@ class KeyboardServletTest {
 	private RequestDispatcher requestDispatcher;
 	private keyboards_servlet servlet;
 
+	@BeforeMethod
 	@BeforeEach
 	void setUp() throws Exception {
 		servlet = new keyboards_servlet();
 	}
 
+	@AfterMethod
 	@AfterEach
 	void tearDown() throws Exception {
 	}
@@ -65,6 +69,27 @@ class KeyboardServletTest {
 		
 		Mockito.when(request.getRequestDispatcher("keyboard.jsp")).thenReturn(requestDispatcher);
 		servlet.listKeyboard(request, response);
+	}
+	
+	@Test
+	void SQLExceptionList() {
+		try {
+			throw new SQLException();
+		}
+		catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	@Test
+	void connectionErrors() throws ClassNotFoundException {
+		try {
+			Exception e1 = new ClassNotFoundException();
+			throw new SQLException(e1);
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
