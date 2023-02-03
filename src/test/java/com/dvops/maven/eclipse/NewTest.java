@@ -15,10 +15,10 @@ public class NewTest {
 	@Test
   	public void checkId() {
 		webDriver.navigate().to("http://localhost:8060/Group6/");
-		WebElement we = webDriver.findElement(By.id("content"));
+		WebElement we = webDriver.findElement(By.id("topnav"));
 	  
 	  System.out.println("id we:" +we.getAttribute("role"));
-	  Assert.assertEquals(we.getAttribute("role"), "contentinfo");
+	  Assert.assertEquals(we.getAttribute("role"), "topnavinfo");
 	}
   
 	@Test
