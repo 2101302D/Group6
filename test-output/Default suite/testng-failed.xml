@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dvops.maven.eclipse.KeyboardJSPTest">
+      <class name="com.dvops.maven.eclipse.KeyboardServletTest">
         <methods>
-          <include name="beforeTest"/>
-          <include name="testCard"/>
-          <include name="afterTest"/>
+          <include name="tearDown"/>
+          <include name="doPostTest"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.dvops.maven.eclipse.KeyboardJSPTest -->
+      </class> <!-- com.dvops.maven.eclipse.KeyboardServletTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
