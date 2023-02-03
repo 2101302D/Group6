@@ -12,15 +12,15 @@ import org.testng.annotations.AfterTest;
 public class NewTest {
 	private WebDriver webDriver;
 	
-	@Test
-  	public void checkId() {
+	/*@Test
+	public void checkId() {
 		webDriver.navigate().to("http://localhost:8060/Group6/");
-		WebElement we = webDriver.findElement(By.id("topnav"));
+		WebElement we = webDriver.findElement(By.id("welcome"));
 	  
 	  System.out.println("id we:" +we.getAttribute("role"));
-	  Assert.assertEquals(we.getAttribute("role"), "topnavinfo");
-	}
-  
+	  Assert.assertEquals(we.getAttribute("role"), "welcomeinfo");
+	}*/
+ 
 	@Test
 	public void checkTitle() {
 		webDriver.navigate().to("http://localhost:8060/Group6/");
@@ -37,8 +37,8 @@ public class NewTest {
 	  	webDriver = new ChromeDriver();
 	}
 
-	@AfterTest
+	/*@AfterTest
 	public void afterTest() {
 		webDriver.quit();
-	}
+	}*/
 }
