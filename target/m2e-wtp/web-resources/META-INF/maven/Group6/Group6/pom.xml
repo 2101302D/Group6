@@ -49,12 +49,31 @@
 			<version>${junit-jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>${selenium.groupId}</groupId>
+			<artifactId>${selenium.artifactId}</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${testng.groupId}</groupId>
+			<artifactId>${testng.artifactId}</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	
 	<properties>
    		<junit-jupiter.groupId> org.junit.jupiter </junit-jupiter.groupId>
    		<junit-jupiter.artifactId> junit-jupiter </junit-jupiter.artifactId>
    		<junit-jupiter.version> 5.7.0 </junit-jupiter.version>
+   		
+   		<selenium.groupId>org.seleniumhq.selenium</selenium.groupId>
+		<selenium.artifactId>selenium-java</selenium.artifactId>
+		<selenium.version>2.53.1</selenium.version>
+		
+		<testng.groupId>org.testng</testng.groupId>
+		<testng.artifactId>testng</testng.artifactId>
+		<testng.version>6.9.10</testng.version>
    	</properties>
 
 	<build>
@@ -70,6 +89,11 @@
     		<plugin>
     			<artifactId>maven-surefire-plugin</artifactId>
     			<version>2.22.1</version>
+    			<configuration>
+    				<suiteXmlFiles>
+    					<suiteXmlFile>testing.xml</suiteXmlFile>
+    				</suiteXmlFiles>
+    			</configuration>
     		</plugin>
     		<plugin>
     			<artifactId>maven-war-plugin</artifactId>
