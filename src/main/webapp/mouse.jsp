@@ -21,7 +21,7 @@
 		<a style="color: white; padding-right:50px; float:right;" href="userManagement.jsp">  User</a>
 	</nav>
 		
-	<body style="background-color:white;">
+	<body id="mouseview" role="content" style="background-color:white;">
 	
 	<div style="padding-top:40px; padding-left:400px; padding-right:400px;">
 		<form action="mouseform.jsp">
