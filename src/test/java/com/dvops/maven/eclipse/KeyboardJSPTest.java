@@ -12,27 +12,27 @@ public class KeyboardJSPTest {
 	private WebDriver webDriver;
 	 @Test
 	 public void testCard() {
-		 webDriver.navigate().to("http://localhost:8080/Group6/keyboards_servlet");
+		 webDriver.navigate().to("http://localhost:8090/Group6/keyboards_servlet");
 		 WebElement card = webDriver.findElement(By.className("card"));
 		 Assert.assertTrue(card.isDisplayed());
   }
 	 @Test
 	 public void testNavBar() {
-		 webDriver.navigate().to("http://localhost:8080/Group6/keyboards_servlet");
+		 webDriver.navigate().to("http://localhost:8090/Group6/keyboards_servlet");
 		 WebElement navBar = webDriver.findElement(By.className("topnav"));
 		 Assert.assertTrue(navBar.isDisplayed());
 	 }
 	 
 	 @Test
 	 public void testContainer() {
-		 webDriver.navigate().to("http://localhost:8080/Group6/keyboards_servlet");
+		 webDriver.navigate().to("http://localhost:8090/Group6/keyboards_servlet");
 		 WebElement container = webDriver.findElement(By.className("container"));
 		 Assert.assertTrue(container.isDisplayed());
 	 }
 	 
 	 @Test
 	 public void testRow() {
-		 webDriver.navigate().to("http://localhost:8080/Group6/keyboards_servlet");
+		 webDriver.navigate().to("http://localhost:8090/Group6/keyboards_servlet");
 		 WebElement row = webDriver.findElement(By.className("row"));
 		 Assert.assertTrue(row.isDisplayed());
 	 }
