@@ -9,17 +9,17 @@ import org.junit.jupiter.api.Test;
 
 class MouseCollectionTest {
 	
-	private mouseCollection sc;
-	private Mouse s1;
-	private Mouse s2;
-	private Mouse s3;
+	private mouseCollection mc;
+	private Mouse m1;
+	private Mouse m2;
+	private Mouse m3;
 	
-	private final int MOUSE_COLLECTION_SIZE = 3;
+	/*private final int MOUSE_COLLECTION_SIZE = 3;*/
 
 	@BeforeEach
 	void setUp() throws Exception {
-		sc = new mouseCollection();
-		s1 = new Mouse( 
+		mc = new mouseCollection();
+		m1 = new Mouse( 
 				"Razer DeathAdder V2",
 				"Wired [USB]",
 				"6",
@@ -29,19 +29,9 @@ class MouseCollectionTest {
 				"$119.90",
 				"4.5",
 				"https://cdn.mos.cms.futurecdn.net/oKG8af4ZbJqjttMd2jKGzZ-970-80.jpg.webp",
-				"Designed to dominate in MMO, Battle Royale, FPS, and more, the multi-genre "
-				+ "master returns stronger than ever. With 3 swappable side plates, 19+1 programmable buttons, "
-				+ "a Razer HyperScroll Pro Wheel, and Razer HyperSpeed Wireless, the Razer Naga V2 Pro packs the"
-				+ " power to rise above every genre. The Razer Naga V2 Pro comes with a set of 12, 6 and 2-button"
-				+ " magnetic side plates, allowing you adapt to any game genre with up to 22 programmable "
-				+ "controls. The overall design of Naga Pro stays close to the Trinity but has gained a bit of "
-				+ "weight to accommodate the new tech. The Naga Pro is 7mm wider and heavier than the Trinity at"
-				+ " 117g, but thanks to the 100% PTFE feet, it glides smoothly across most surfaces. The bigger"
-				+ " mouse also takes some getting used to; requiring my long hands to adopt a full palm grip. "
-				+ "But the contoured mouse buttons and a rest for my ring finger make it easier to hold onto. "
-				+ "Textured rubber grips for the thumb and pinky also help."
+				"Designed to dominate in MMO, Battle Royale, FPS, and more, the multi-genre master returns stronger than ever."
 				);
-		s2 = new Mouse (
+		m2 = new Mouse (
 				"Logitech G203 Lightsync",
 				"Wired [USB]",
 				"5",
@@ -53,7 +43,7 @@ class MouseCollectionTest {
 				"https://cdn.mos.cms.futurecdn.net/BLUvfLpuxjut6JBS7Qf73C.jpg",
 				" "
 				);
-		s3 = new Mouse (
+		m3 = new Mouse (
 				"Razer Naga Pro",
 				"Wireless, Wired [USB], Bluetooth",
 				"3 swappable side plates with up to 19+1 programmable buttons",
@@ -65,24 +55,25 @@ class MouseCollectionTest {
 				"https://cdn.mos.cms.futurecdn.net/FsYiy2ZBVwhAPeUxJj63NE-970-80.jpg.webp",
 				" "
 				);
-		sc.postMouses(s1);
-		sc.postMouses(s2);
-		sc.postMouses(s3);
+		mc.postMouses(m1);
+		mc.postMouses(m2);
+		mc.postMouses(m3);
 	}
 
 	@Test
 	void testAddMouses() {
-		List<Mouse> testSc = sc.getMouses();
-		sc.postMouses(s1);
+		mc.postMouses(m1);
+		List<Mouse> testMc = mc.getMouses();
 	}
 	
+	@Test
 	void testGetMouses() {
-		List<Mouse> testSc = sc.getMouses();
-		sc.postMouses(s1);
+		List<Mouse> testMc = mc.getMouses();
 	}
 	
+	@Test
 	void testGetMouseByName() {
-		
+        Mouse testMc = mc.getByName("Razer DeathAdder Essential");
 	}
 
 }
