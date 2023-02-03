@@ -108,7 +108,7 @@ public class keyboards_servlet extends HttpServlet {
 			Number price = rs.getInt("price");
 			Number rating = rs.getInt("rating");
 			String image = rs.getString("image");
-			keyboard.add(new keyboard(id, name, switches, size, backlight, passthrough, keycaps, price, rating, image));
+			keyboard.add(new keyboard(name, switches, size, backlight, passthrough, keycaps, price, rating, image));
 			}
 			} catch (SQLException e) {
 			System.out.println(e.getMessage());
