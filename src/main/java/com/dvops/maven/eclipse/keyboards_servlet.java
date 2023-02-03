@@ -43,9 +43,10 @@ public class keyboards_servlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath()); 
 		// TODO Auto-generated method stub
-		String action = request.getServletPath();
+		//String action = request.getServletPath();
 		try {
 			listKeyboard(request, response);
 		}
@@ -54,8 +55,7 @@ public class keyboards_servlet extends HttpServlet {
 			throw new ServletException(ex);
 			
 		}
-
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
@@ -63,6 +63,7 @@ public class keyboards_servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request, response);
 		
 	}
 	
@@ -89,7 +90,7 @@ public class keyboards_servlet extends HttpServlet {
 			return connection;
 	}
 	
-	private void listKeyboard(HttpServletRequest request, HttpServletResponse response)
+	void listKeyboard(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
 			List <keyboard> keyboard = new ArrayList <>();
@@ -117,7 +118,7 @@ public class keyboards_servlet extends HttpServlet {
 			System.out.println(e.getMessage());
 			}
 			request.setAttribute("listKeyboard", keyboard);
-			request.getRequestDispatcher("/keyboard.jsp").forward(request, response);
+			request.getRequestDispatcher("keyboard.jsp").forward(request, response);
 			}
 
 
