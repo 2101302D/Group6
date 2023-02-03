@@ -25,8 +25,7 @@ crossorigin="anonymous">
 		<a style="color: white; padding-right:50px; float:right;" href="userManagement.jsp">  User</a>
 	</nav>
 	
-	<body style="background-color:white;">
-		
+	<body id="keyboardview" role="content" style="background-color:white;">
 		<div style="padding-top:100px; padding-left:400px; padding-right:400px;">
 			<div class="card" style="background-color:#dbdbdb;">
 				<div class="card-body">

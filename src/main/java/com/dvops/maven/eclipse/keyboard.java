@@ -1,7 +1,6 @@
 package com.dvops.maven.eclipse;
 
 public class keyboard {
-	private String id;
 	private String name;
 	private String switches;
 	private String size;
@@ -15,9 +14,8 @@ public class keyboard {
 
 	
 
-	public keyboard(String id,String name, String switches, String size, String backlight, String passthrough, String keycaps, Number price, Number rating, String image) 
+	public keyboard(String name, String switches, String size, String backlight, String passthrough, String keycaps, Number price, Number rating, String image) 
 	{	
-		this.id = id;
 		this.name = name;
 		this.switches = switches;
 		this.size = size;
@@ -34,9 +32,8 @@ public class keyboard {
 	
 	public String getSwitches() {return switches;}
 	
-	public String getId() {
-		return id;
-	}
+	public String getSize() {return size;}
+	
 	public String getBacklight() {return backlight;}
 	
 	public String getPassthrough() {return passthrough;}
