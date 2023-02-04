@@ -46,7 +46,7 @@ pipeline {
             steps{
                 echo 'Scanning...'
                 withSonarQubeEnv('SonarQube'){
-                    bat 'mvn sonar:sonar -Dsonar.projectKey=Group6 -Dsonar.host.url=http://localhost:9000 -Dsonar.login=1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b'
+                    bat 'mvn sonar:sonar'
                 }
             }
             post{
