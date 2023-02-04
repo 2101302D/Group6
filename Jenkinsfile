@@ -7,10 +7,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               	withSonarQubeEnv(installationName: 'SonarQube'){
-                    echo 'Building...'
+                withSonarQubeEnv(installationName: 'SonarQube'){
                     bat 'mvn clean install sonar:sonar'
-                } 
+                }
             }
             post{
                 always{
@@ -38,18 +37,6 @@ pipeline {
                 }
                 failure{
                     echo 'Test Failed'
-                }
-            }
-        }
-            post{
-                always{
-                    echo 'Scan Completed'
-                }
-                success{
-                    echo 'Scan Success'
-                }
-                failure{
-                    echo 'Scan Failed'
                 }
             }
         }
@@ -90,3 +77,4 @@ pipeline {
             }
         }
     }
+}
