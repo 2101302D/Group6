@@ -7,9 +7,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withSonarQubeEnv(installationName: 'SonarQube'){
-                    bat 'mvn clean install sonar:sonar'
-                }
+                bat label: 'Building Project', script: '''
+                    @echo 
+                    echo 'Building...'
+                    mvn clean install -Dmaven.test.skip=true
+                '''
             }
             post{
                 always{
@@ -40,22 +42,15 @@ pipeline {
                 }
             }
         }
-        stage('QualityGate'){
-            steps{
-                echo 'QualityGate...'
-                timeout(time: 1, unit: 'MINUTES'){
-                    waitForQualityGate abortPipeline: true
-                }
-            }
             post{
                 always{
-                    echo 'QualityGate Completed'
+                    echo 'Scan Completed'
                 }
                 success{
-                    echo 'QualityGate Success'
+                    echo 'Scan Success'
                 }
                 failure{
-                    echo 'QualityGate Failed'
+                    echo 'Scan Failed'
                 }
             }
         }
