@@ -42,23 +42,6 @@ pipeline {
                 }
             }
         }
-         stage('Scan to Sonarqube'){
-            steps{
-                echo 'Scanning to Sonarqube...'
-                bat 'mvn sonar:sonar'
-            }
-            post{
-                always{
-                    echo 'Scan Completed'
-                }
-                success{
-                    echo 'Scan Success'
-                }
-                failure{
-                    echo 'Scan Failed'
-                }
-            }
-        }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
