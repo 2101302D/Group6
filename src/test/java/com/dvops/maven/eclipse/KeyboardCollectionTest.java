@@ -46,7 +46,7 @@ class KeyboardCollectionTest {
 		int KEYBOARD_COLLECTION_SIZE_TEST = 4;
 		AssertJUnit.assertEquals(kc.getKeyboard().size(), KEYBOARD_COLLECTION_SIZE_TEST);
 	}
-
+	
 	@Test
 	void testAddKeyboard() {
 		List<keyboard> testKc = kc.getKeyboard();
