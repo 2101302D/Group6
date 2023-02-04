@@ -3,8 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.dvops.maven.eclipse.MouseCollectionTest"/>
+      <class name="com.dvops.maven.eclipse.MouseJspTest"/>
       <class name="com.dvops.maven.eclipse.NewTest"/>
+      <class name="com.dvops.maven.eclipse.KeyboardJspTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -28,6 +28,8 @@ public class NewTest {
 		Assert.assertEquals(webDriver.getTitle(), "Home");
 		System.out.println("title:"+webDriver.getTitle());
 	}
+	
+	
 	@BeforeTest
 	public void beforeTest() {
 	  	String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
