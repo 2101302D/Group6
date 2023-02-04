@@ -42,6 +42,44 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube Scan'){
+            steps{
+                echo 'Scanning...'
+                withSonarQubeEnv('SonarQube'){
+                    bat 'mvn sonar:sonar -Dsonar.projectKey=Group6 -Dsonar.host.url=http://localhost:9000 -Dsonar.login=1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b'
+                }
+            }
+            post{
+                always{
+                    echo 'Scan Completed'
+                }
+                success{
+                    echo 'Scan Success'
+                }
+                failure{
+                    echo 'Scan Failed'
+                }
+            }
+        }
+        stage('QualityGate'){
+            steps{
+                echo 'QualityGate...'
+                timeout(time: 1, unit: 'MINUTES'){
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+            post{
+                always{
+                    echo 'QualityGate Completed'
+                }
+                success{
+                    echo 'QualityGate Success'
+                }
+                failure{
+                    echo 'QualityGate Failed'
+                }
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
