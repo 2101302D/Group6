@@ -45,9 +45,7 @@ pipeline {
          stage('Scan to Sonarqube'){
             steps{
                 echo 'Scanning to Sonarqube...'
-                withSonarQubeEnv('Sonarqube'){
-                    bat 'mvn sonar:sonar'
-                }
+                bat 'mvn sonar:sonar'
             }
             post{
                 always{
