@@ -10,7 +10,7 @@ pipeline {
                 bat label: 'Building Project', script: '''
                     @echo 
                     echo 'Building...'
-                    mvn package -Dmaven.test.skip=true
+                    mvn clean install -Dmaven.test.skip=true
                 '''
             }
             post{
@@ -25,7 +25,6 @@ pipeline {
                 }
             }
         }
-
         stage('Test') {
             steps {
                 echo 'Testing...'
@@ -40,6 +39,25 @@ pipeline {
                 }
                 failure{
                     echo 'Test Failed'
+                }
+            }
+        }
+         stage('Scan to Sonarqube'){
+            steps{
+                echo 'Scanning to Sonarqube...'
+                withSonarQubeEnv('Sonarqube'){
+                    bat 'mvn sonar:sonar'
+                }
+            }
+            post{
+                always{
+                    echo 'Scan Completed'
+                }
+                success{
+                    echo 'Scan Success'
+                }
+                failure{
+                    echo 'Scan Failed'
                 }
             }
         }
