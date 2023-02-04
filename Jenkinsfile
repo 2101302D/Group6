@@ -7,11 +7,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat label: 'Building Project', script: '''
-                    @echo 
+               	withSonarQubeEnv(installationName: 'SonarQube'){
                     echo 'Building...'
-                    mvn clean install -Dmaven.test.skip=true
-                '''
+                    bat 'mvn clean install sonar:sonar'
+                } 
             }
             post{
                 always{
@@ -42,13 +41,6 @@ pipeline {
                 }
             }
         }
-        stage('SonarQube Scan'){
-            steps{
-                echo 'Scanning...'
-                withSonarQubeEnv('SonarQube'){
-                    bat 'mvn verify sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=admin'
-                }
-            }
             post{
                 always{
                     echo 'Scan Completed'
