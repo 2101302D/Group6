@@ -42,18 +42,6 @@ pipeline {
                 }
             }
         }
-            post{
-                always{
-                    echo 'Scan Completed'
-                }
-                success{
-                    echo 'Scan Success'
-                }
-                failure{
-                    echo 'Scan Failed'
-                }
-            }
-        }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
@@ -72,3 +60,4 @@ pipeline {
             }
         }
     }
+}
