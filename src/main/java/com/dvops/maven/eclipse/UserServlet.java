@@ -1,3 +1,4 @@
+package com.dvops.maven.eclipse;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -28,7 +29,7 @@ public class UserServlet extends HttpServlet {
 	private static final String DELETE_USERS_SQL = "delete from User where name = ?;";
 	private static final String UPDATE_USERS_SQL = "update User set name = ?,password= ?,email =? where name = ?;";
 	
-	private void listUsers(HttpServletRequest request, HttpServletResponse response)
+	private void getUser(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException
 			{
 			List <User> users = new ArrayList <>();
@@ -50,7 +51,7 @@ public class UserServlet extends HttpServlet {
 			request.getRequestDispatcher("/userManagement.jsp").forward(request, response);
 			}
 	
-	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+	private void getByName(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 					String name = request.getParameter("name");
 					User existingUser = new User("", "", "");
@@ -139,13 +140,13 @@ public class UserServlet extends HttpServlet {
 			deleteUser(request, response);
 			break;
 			case "/UserServlet/edit":
-			showEditForm(request, response);
+			getByName(request, response);
 			break;
 			case "/UserServlet/update":
 			updateUser(request, response);
 			break;
 			case "/UserServlet/dashboard":
-			listUsers(request, response);
+			getUser(request, response);
 			break;
 			}
 			} catch (SQLException ex) {
