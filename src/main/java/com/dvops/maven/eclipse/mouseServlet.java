@@ -48,7 +48,7 @@ public class mouseServlet extends HttpServlet {
         String w = request.getParameter("Weight");
         String s = request.getParameter("Size");
         String P = request.getParameter("Price");
-        String r = request.getParameter("Rating");
+		String r = request.getParameter("Rating");
         String I = request.getParameter("Image");
         String D = request.getParameter("Description");
         try {

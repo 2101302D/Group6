@@ -20,8 +20,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.*;
 
+
 class KeyboardServletTest {
-	
+
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	private RequestDispatcher requestDispatcher;
@@ -43,15 +44,15 @@ class KeyboardServletTest {
 		request = Mockito.mock(HttpServletRequest.class);
 		response = Mockito.mock(HttpServletResponse.class);
 		requestDispatcher = Mockito.mock(RequestDispatcher.class);
-		
+
 		Mockito.when(request.getRequestDispatcher("keyboard.jsp")).thenReturn(requestDispatcher);
 		StringWriter stringWriter = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(stringWriter);
-		
+
 		Mockito.when(response.getWriter()).thenReturn(printWriter);
 		String testResult = stringWriter.toString();
 		assertNotNull(testResult);
-	
+
 	}
 
 	@Test
@@ -66,30 +67,9 @@ class KeyboardServletTest {
 		HttpServletResponse response = Mockito.mock(HttpServletResponse.class);
 		servlet = new keyboards_servlet();
 		requestDispatcher = Mockito.mock(RequestDispatcher.class);
-		
+
 		Mockito.when(request.getRequestDispatcher("keyboard.jsp")).thenReturn(requestDispatcher);
 		servlet.listKeyboard(request, response);
-	}
-	
-	@Test
-	void SQLExceptionList() {
-		try {
-			throw new SQLException();
-		}
-		catch(SQLException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	
-	@Test
-	void connectionErrors() throws ClassNotFoundException {
-		try {
-			Exception e1 = new ClassNotFoundException();
-			throw new SQLException(e1);
-		}
-		catch(SQLException e) {
-			e.printStackTrace();
-		}
 	}
 
 }
